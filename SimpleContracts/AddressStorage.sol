@@ -21,7 +21,7 @@ contract AddressStorage {
     function AddressStorage() public {
         contractOwner = msg.sender;
     }
-    function createPerson(string name,address addr,string mail) public  isProperPerson(addr) {
+    function createPerson(string name,address addr,string mail) public isProperPerson(addr) {
         Person memory currentPerson;
         currentPerson.name = name;
         currentPerson.addr = addr;

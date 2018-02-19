@@ -34,7 +34,7 @@ contract NonPayable {
         _;
     }
 
-    function getBalance() isOwner() public view returns (uint256) {
+    function getBalance() public view isOwner() returns (uint256) {
         return this.balance;
     }
 

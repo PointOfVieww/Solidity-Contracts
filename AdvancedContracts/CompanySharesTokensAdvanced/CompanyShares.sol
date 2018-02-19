@@ -57,7 +57,7 @@ contract CompanyShares {
 
     function depositEarnings() public payable isOwner() { }
 
-    function getBalance()public view isOwner() returns(uint256) { return this.balance; }
+    function getBalance() public view isOwner() returns(uint256) { return this.balance; }
 
     function getNumberOfShares(address addr) public view returns(uint256) {
         require(msg.sender == addr || msg.sender == owner);
