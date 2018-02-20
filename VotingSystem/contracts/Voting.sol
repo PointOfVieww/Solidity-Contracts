@@ -5,27 +5,27 @@ contract Voting {
     mapping (bytes32=>uint256) public candidateVotes;
     mapping (bytes32=>bool) private candidates;
     
-    function validCandidate(bytes32 addr) public view returns(bool) {
-        if (candidates[addr]) {
+    function validCandidate(bytes32 name) public view returns(bool) {
+        if (candidates[name]) {
             return true;
         } else {
             return false;
         }
     }
 
-    function addCandidate(bytes32 addr) public {
+    function addCandidate(bytes32 name) public {
         
-        candidates[addr] = true;
+        candidates[name] = true;
     }
 
-    function voteForCandidate(bytes32 addr) public {
-        require(validCandidate(addr));
-        candidateVotes[addr] += 1;
+    function voteForCandidate(bytes32 name) public {
+        require(validCandidate(name));
+        candidateVotes[name] += 1;
     }
 
-    function totalVotes(bytes32 addr) public view returns (uint256) {
-        require(validCandidate(addr));
-        return candidateVotes[addr];
+    function totalVotes(bytes32 name) public view returns (uint256) {
+        require(validCandidate(name));
+        return candidateVotes[name];
     }
 }
 
