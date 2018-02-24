@@ -21,7 +21,7 @@ contract Capitol {
         require(startTimer + timeToFight > block.timestamp);
         _;
     }
-    //random should be changed so that you dont write on the blockchain
+    //random should be changed so that you dont write on the blockchain and should use oracle
     function random(uint256 min,uint256 max) private returns(uint256) {
         nonce++;
         return uint256(keccak256(nonce+block.timestamp))%(min+max)-min;
